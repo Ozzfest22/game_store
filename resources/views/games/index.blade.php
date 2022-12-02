@@ -6,33 +6,37 @@
 <div class="container">
     <div class="card mt-4">
         <div class="card-header bg-primary text-white">
-            <h1>Categories</h1>
+            <h1>Games</h1>
         </div>
         <div class="card-body">
 
-            <a class="btn btn-success mb-2" href="#" data-toggle="modal" data-target="#modalAddCategory">New Category</a>
+            <a class="btn btn-success mb-2" href="#" data-toggle="modal" data-target="#modalAddGame">New Game</a>
 
             <table class="table table-striped mt-2 text-center">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($categories as $category)
+                    @foreach($games as $game)
                     <tr>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->name}}</td>
+                        <td>{{$game->id}}</td>
+                        <td>{{$game->name}}</td>
+                        <td>{{$game->price}}</td>
+                        <td>{{$game->category->name}}</td>
                         <td>
                             <form>
-                                <a class="btn btn-info" href="#" data-toggle="modal" data-target="#modalEditCategory{{$category->id}}">Edit</a>
+                                <a class="btn btn-info" href="#" data-toggle="modal" data-target="#modalEditGame{{$game->id}}">Edit</a>
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>
                     </tr>
-                    @include('categories.modals.modalEdit')
+                    @include('games.modals.modalEdit')
                     @endforeach
                 </tbody>
             </table>
@@ -40,8 +44,8 @@
     </div>
 </div>
 
+@include('games.modals.modalCreate')
 
-@include('categories.modals.modalCreate')
 @stop
 
 @section('css')
@@ -49,19 +53,7 @@
 @stop
 
 @section('js')
-@if(!$errors->isEmpty())
-    @if($errors->has('post'))
-        <script>
-            $(function() {
-                $('#modalAddCategory').modal('show');
-            });
-        </script>
-    @else
-        <script>
-            $(function() {
-                $('#modalEditCategory{{$category->id}}').modal('show');
-            });
-        </script>
-    @endif
-@endif
+<script>
+    console.log('Hi!');
+</script>
 @stop

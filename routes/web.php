@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('saveCategory', [CategoryController::class, 'saveCategory'])->name('saveCategory');
     Route::patch('updateCategory/{category}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
     
+    //Games
+    Route::get('getGames', [GameController::class, 'getGames'])->name('getGames');
+    Route::post('saveGame', [GameController::class, 'saveGame'])->name('saveGame');
+    Route::patch('updateGame/{game}', [GameController::class, 'updateGame'])->name('updateGame');
 });

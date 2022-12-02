@@ -16,8 +16,8 @@
                             <div class="form-group">
                                 <label for="codigoProducto">Name</label>
                                 <input type="text" name="name" class="form-control" value="{{$category->name}}" id="nameCategory" placeholder="Name">
-                                @if($errors->has('cod_prod'))
-                                <span class="text-danger">{{$errors->first('cod_prod')}}</span>
+                                @if($errors->has('name'))
+                                <span class="text-danger">{{$errors->first('name')}}</span>
                                 @endif
                             </div>
                         </div>

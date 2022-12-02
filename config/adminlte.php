@@ -306,7 +306,7 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        [
+        /*[
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -317,7 +317,7 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
+        ],*/
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -330,6 +330,11 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Games',
+            'url'  => 'getGames',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        /*[
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
@@ -387,7 +392,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*

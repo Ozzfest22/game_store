@@ -12,4 +12,9 @@ class Category extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function game()
+    {
+        return $this->hasMany(Game::class);
+    }
 }

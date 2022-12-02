@@ -14,4 +14,17 @@ class CategoryRepository implements CategoryRepositoryInterface
         return $categories;
     }
 
+    public function saveCategory(array $category)
+    {
+        $saved = Category::create($category);
+
+        return $saved;
+    }
+
+    public function updateCategory($id, array $category)
+    {
+        $updated = Category::find($id)->update($category);
+
+        return $updated;
+    }
 }
